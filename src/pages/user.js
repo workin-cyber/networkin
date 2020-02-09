@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import Loader from '../loader'
 import ErrorText from '../errorText'
+import queryString from 'query-string'
+import { Link } from 'react-router-dom'
 
 export default class User extends React.Component {
     constructor() {
@@ -24,7 +26,10 @@ export default class User extends React.Component {
 
     render() {
 
-        const { user, loading, error } = this.state
+        const { location = {} } = this.props,
+            { user, loading, error } = this.state
+
+        const query = queryString.parse(location.search)
 
         if (error)
             return <ErrorText>{error}</ErrorText>
@@ -32,7 +37,21 @@ export default class User extends React.Component {
         if (loading)
             return <Loader />
 
-        return <div>user {user.name}</div>
+        return <div>
+            user {user.name}
+
+            <br />
+            <Link to={`${location.pathname}?mode=posts`}>Posts</Link>
+            <br />
+            <Link to={`${location.pathname}?mode=alboms`}>Alboms</Link>
+
+            {query.mode == 'posts' ? <div>
+                Posts
+            </div> : null}
+            {query.mode == 'alboms' ? <div>
+                Alboms
+            </div> : null}
+        </div>
     }
 
 } 
