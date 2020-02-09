@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+
+body {
+  margin: 0;
+  background-color: #f5f5f5;
+  padding-top: 70px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.box {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ececec;
+}
+
+.loader img {
+  max-width: 100px;
+  margin: auto;
+  display: block;
+}
+
+.errorText {
+  color: red;
+  text-align: center;
+  text-transform: capitalize;
+  background: white;
+  max-width: 300px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  text-align: center;
+  box-shadow: 0 0px 7px 2px rgba(0, 0, 0, 0.08);
+}
+
+header .logo {
+  max-width: 200px;
+}
+
+header nav a {
+  margin: 5px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+a.activeLink {
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.post {
+  width: 400px;
+  max-width: calc(100% - 20px);
+  margin: 10px auto;
+  padding: 20px;
+  transition: 0.2s;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.post .user {
+  display: flex;
+}
+
+.post .user .userImg {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  border: 1px solid #ececec;
+  border-radius: 50%;
+}
+
+.post .user .info {
+  margin-left: 7px;
+  color: lightgray;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post .commentsNum {
+  font-size: 12px;
+  color: gray;
+  margin-top: 10px;
+}
+
+.post a {
+  color: #00ca44;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.post a:not(:hover) {
+  text-decoration: none;
+}
+
+.post:hover {
+  box-shadow: 0 0px 7px 2px rgba(0, 0, 0, 0.08);
+  border-color: transparent;
+}
+
+.post h4 {
+  text-transform: capitalize;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.post h4::first-letter {
+  font-size: 150%;
+  color: #8A2BE2;
+}
+
+.post p::first-letter {
+  text-transform: capitalize;
+}
+
+.post p {
+  margin-bottom: 0;
+}
